@@ -1,0 +1,31 @@
+class Stream {
+    constructor(size) {
+        this.symbols = [];
+        this.totalSymbols = round(random(5, 30));
+        this.speed = random(2, 10.5);
+        this.symbolSize = size;
+    }
+
+    generateSymbols(x, y) {
+        var y = round(random(-500, 0));
+        var x = round(random(0, width));
+        let first = round(random(0,4)) == 1;
+
+        for(var i = 0; i <= this.totalSymbols; i++) {
+            // fade towards the end
+            let alpha = round( (i / this.totalSymbols) * 255);
+            alpha = map(alpha, 0, 255, 255, 0);
+            let symbol = new CharSymbol(x, y, this.speed, alpha, first);
+            symbol.setToRandomSymbol();
+            this.symbols.push(symbol);
+            y -= this.symbolSize;
+            first = false;
+        }
+    }
+
+    render() {
+        for(var i = 0; i < this.totalSymbols; i++) {
+            this.symbols[i].display();
+        }
+    }
+}
