@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(0, 115);
   for(var i = 0; i < totalStreams; i++) {
     streams[i].generateSymbols();
     streams[i].render();
