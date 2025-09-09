@@ -3,7 +3,7 @@
 
 let char_symbol;
 let newStream;
-let totalStreams = 100;
+let totalStreams = 300;
 let streams = [];
 let textSz = 19;
 
